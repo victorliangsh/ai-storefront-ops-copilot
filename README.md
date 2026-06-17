@@ -55,6 +55,12 @@ The project includes reusable AI prompts for product selection, product-page cop
 
 See [AI Workflow Prompts](docs/prompts.md) for prompt templates.
 
+## Service Offer
+
+This workflow can also support a practical service package for small Shopify and DTC storefront operators.
+
+See [AI Shopify Product Page Launch Pack](docs/service-offer.md) for a sample service offer, deliverables, pricing ranges, and client input checklist.
+
 ## Example Workflows
 
 Planned examples include:
