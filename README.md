@@ -30,6 +30,25 @@ The goal is to make AI-assisted ecommerce operations more accessible to small se
 
 Instead of only providing generic marketing advice, this project focuses on practical workflows that can be reused across products and stores.
 
+## Local Prototype
+
+This repository includes a simple local HTML prototype:
+
+```text
+src/index.html
+```
+
+The prototype can generate basic storefront assets from structured product inputs, including:
+
+- Product title
+- Short description
+- Key benefits
+- FAQ draft
+- Trust section
+- Launch checklist
+
+See [Local Tool Prototype](docs/local-tool.md) for usage instructions.
+
 ## Example Workflows
 
 Planned examples include:
