@@ -49,6 +49,12 @@ The prototype can generate basic storefront assets from structured product input
 
 See [Local Tool Prototype](docs/local-tool.md) for usage instructions.
 
+## AI Workflow Prompts
+
+The project includes reusable AI prompts for product selection, product-page copy, storefront audits, daily operations reviews, and launch checklists.
+
+See [AI Workflow Prompts](docs/prompts.md) for prompt templates.
+
 ## Example Workflows
 
 Planned examples include:
@@ -67,7 +73,7 @@ Planned examples include:
 - Add storefront audit examples
 - Add daily operations report templates
 - Build a simple local web tool for generating product-page assets
-- Add AI workflow prompts for ecommerce operators
+- Expand AI workflow prompts for ecommerce operators
 
 ## License
 
