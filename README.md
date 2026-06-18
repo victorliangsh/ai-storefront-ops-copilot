@@ -81,6 +81,10 @@ Planned examples include:
 - Build a simple local web tool for generating product-page assets
 - Expand AI workflow prompts for ecommerce operators
 
+## Changelog
+
+See [Changelog](CHANGELOG.md) for project maintenance notes and recent updates.
+
 ## License
 
 This project is released under the MIT License.
