@@ -107,6 +107,35 @@
       background: var(--accent-dark);
     }
 
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .actions button {
+      margin-top: 0;
+    }
+
+    .secondary-button {
+      background: #eef2f6;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .secondary-button:hover {
+      background: #dde6ef;
+    }
+
+    .copy-status {
+      min-height: 20px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
     .output {
       display: grid;
       gap: 14px;
@@ -182,7 +211,11 @@
       <label for="price">Price range</label>
       <input id="price" value="$29-$49" />
 
-      <button id="generate">Generate Storefront Assets</button>
+      <div class="actions">
+        <button id="generate">Generate Storefront Assets</button>
+        <button id="copyMarkdown" class="secondary-button" type="button">Copy Markdown</button>
+      </div>
+      <div id="copyStatus" class="copy-status" aria-live="polite"></div>
     </section>
 
     <section>
@@ -202,10 +235,75 @@
       price: document.getElementById("price"),
       output: document.getElementById("output"),
       generate: document.getElementById("generate"),
+      copyMarkdown: document.getElementById("copyMarkdown"),
+      copyStatus: document.getElementById("copyStatus"),
     };
 
     function clean(value) {
       return value.trim() || "Not provided";
+    }
+
+    let latestMarkdown = "";
+
+    function buildMarkdown(productName, customer, problem, benefits, price) {
+      return [
+        "# Storefront Asset Draft",
+        "",
+        "## Product Title",
+        productName + " for " + customer,
+        "",
+        "## Short Description",
+        productName + " helps " + customer.toLowerCase() + " solve a common problem: " + problem.toLowerCase() + " It is designed to make the product benefit clear, practical, and easy to understand.",
+        "",
+        "## Key Benefits",
+        "- " + benefits,
+        "- Easy to explain on a focused Shopify product page.",
+        "- Suitable for short-form product demonstrations.",
+        "- Can be tested with a simple one-product storefront.",
+        "",
+        "## FAQ Draft",
+        "**Who is this product for?**",
+        customer,
+        "",
+        "**What problem does it solve?**",
+        problem,
+        "",
+        "**What price range should be reviewed?**",
+        price,
+        "",
+        "## Trust Section",
+        "- Clear product use case",
+        "- Simple storefront offer",
+        "- Mobile-first product page review",
+        "- Shipping, return, and support information near checkout",
+        "",
+        "## Launch Checklist",
+        "1. Confirm supplier cost, shipping time, and product variants.",
+        "2. Prepare product photos or demonstration assets.",
+        "3. Add product title, description, FAQ, and trust section.",
+        "4. Review mobile layout and add-to-cart flow.",
+        "5. Confirm checkout, payment, shipping, and support information.",
+        "6. Prepare three short-form content angles for testing."
+      ].join("\n");
+    }
+
+    async function copyLatestMarkdown() {
+      if (!latestMarkdown) {
+        render();
+      }
+
+      try {
+        await navigator.clipboard.writeText(latestMarkdown);
+        fields.copyStatus.textContent = "Markdown copied to clipboard.";
+      } catch (error) {
+        const fallback = document.createElement("textarea");
+        fallback.value = latestMarkdown;
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand("copy");
+        document.body.removeChild(fallback);
+        fields.copyStatus.textContent = "Markdown copied using fallback copy.";
+      }
     }
 
     function render() {
@@ -214,6 +312,9 @@
       const problem = clean(fields.problem.value);
       const benefits = clean(fields.benefits.value);
       const price = clean(fields.price.value);
+
+      latestMarkdown = buildMarkdown(productName, customer, problem, benefits, price);
+      fields.copyStatus.textContent = "Generated output is ready to copy.";
 
       fields.output.className = "output";
       fields.output.innerHTML = `
@@ -269,6 +370,7 @@
     }
 
     fields.generate.addEventListener("click", render);
+    fields.copyMarkdown.addEventListener("click", copyLatestMarkdown);
   </script>
 </body>
 </html>
