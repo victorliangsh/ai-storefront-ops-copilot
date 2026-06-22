@@ -2,6 +2,17 @@
 
 All notable changes to AI Storefront Ops Copilot will be documented in this file.
 
+## 2026-06-22
+
+### Added
+
+- Added a `Copy Markdown` button to the local storefront asset generator.
+- Added copy-ready Markdown output for generated product titles, descriptions, benefits, FAQ, trust sections, and launch checklists.
+
+### Updated
+
+- Updated local tool documentation to describe the Markdown copy workflow.
+
 ## 2026-06-18
 
 ### Added
