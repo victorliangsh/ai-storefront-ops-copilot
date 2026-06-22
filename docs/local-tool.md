@@ -18,6 +18,7 @@ The tool takes structured product inputs and generates:
 - FAQ draft
 - Trust section
 - Launch checklist
+- Copy-ready Markdown output
 
 ## How To Use
 
@@ -25,6 +26,7 @@ The tool takes structured product inputs and generates:
 2. Fill in the product name, target customer, customer problem, benefits, and price range.
 3. Click `Generate Storefront Assets`.
 4. Review the generated product-page copy and launch checklist.
+5. Click `Copy Markdown` to copy the generated draft into a document, README, or product-page planning file.
 
 ## Current Status
 
@@ -34,6 +36,6 @@ Future versions may include:
 
 - More product categories
 - Better prompt templates
-- Export to Markdown
+- More structured Markdown export options
 - Shopify product-page draft generation
 - Storefront audit scoring
