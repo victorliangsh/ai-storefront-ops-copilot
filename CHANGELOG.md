@@ -2,6 +2,18 @@
 
 All notable changes to AI Storefront Ops Copilot will be documented in this file.
 
+## 2026-06-27
+
+### Added
+
+- Added a storefront audit scorecard for Shopify and direct-to-consumer product pages.
+- Added scoring categories for clarity, offer strength, proof, trust, FAQ completeness, mobile buying flow, checkout readiness, shipping clarity, and next-action clarity.
+- Added an audit output template and AI prompt for pre-traffic storefront reviews.
+
+### Updated
+
+- Expanded the project from copy generation into launch-readiness and storefront quality review workflows.
+
 ## 2026-06-22
 
 ### Added
