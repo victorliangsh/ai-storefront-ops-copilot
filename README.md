@@ -24,6 +24,12 @@ This project is designed for:
 - Competitor and landing-page structure analysis
 - Reusable AI workflows for small merchants
 
+## Storefront Audit Scorecard
+
+Use the scorecard to review whether a Shopify or direct-to-consumer product page is ready for paid traffic. It includes 10 scoring categories, a decision guide, and an AI audit prompt.
+
+See [Storefront Audit Scorecard](docs/storefront-audit-scorecard.md) for the full template.
+
 ## Project Goals
 
 The goal is to make AI-assisted ecommerce operations more accessible to small sellers.
